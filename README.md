@@ -188,8 +188,16 @@ Configure Hadoop
 				</property>
 				
 			Note:- In this case <Hadoop Home> will be "/home/hduser/hadoop" 
+			
+			
+	3- Formatting HDFS filesystem :-
 	
+		hadoop namenode -format       (hadoop command is depricated in 2.2 version) or
+		hdfs namenode -format
 	
+Start and Stop Hadoop
+
+	1- Start Name node:- 
 	
 	
 	
