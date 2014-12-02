@@ -113,9 +113,81 @@ Configure Hadoop
 			In this case HADOOP_PREFIX and HADOOP_HOME value will be "/home/hduser/hadoop"
 			and the value of JAVA_HOME will be "/usr/lib/jvm/java-7-oracle" 
 	
+	2- Configure hadoop settings :- 
+		cd <hadoop installation dir>/etc/hadoop/
+		
+		In this case <hadoop installation dir> value will be "/home/hduser/hadoop"
 	
-	
-	
+		2.1 - Configure yarn-site.xml :- 
+			
+			Open yarn-site.xml 
+			
+				vi yarn-site.xml
+			
+			Add following lines within <configuration> tag
+			
+				<property>
+				    <name>yarn.nodemanager.aux-services</name>
+				    <value>mapreduce_shuffle</value>
+				</property>
+				<property>
+				    <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+				    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+				</property>
+		
+		2.2 - Configure core-site.xml :- 
+			
+			Open core-site.xml 
+			
+				vi core-site.xml
+			
+			Add following lines within <configuration> tag
+			
+				<property>
+			    	    <name>fs.default.name</name>
+			    	    <value>hdfs://localhost:9000</value>
+				</property>
+				
+		2.3 - Configure mapred-site.xml :- 
+			
+			Open mapred-site.xml 
+			
+				vi mapred-site.xml
+			
+			Add following lines within <configuration> tag
+			
+				<property>
+				    <name>mapreduce.framework.name</name>
+				    <value>yarn</value>
+				</property>
+
+		2.4 - Configure hdfs-site.xml :- 
+			
+			Create name node and data node directories
+			
+			mkdir -p $HADOOP_HOME/yarn_data/hdfs/namenode
+			mkdir -p $HADOOP_HOME/yarn_data/hdfs/datanode
+			
+			Open hdfs-site.xml 
+			
+				vi hdfs-site.xml
+			
+			Add following lines within <configuration> tag
+			
+				<property>
+				    <name>dfs.replication</name>
+				    <value>1</value>
+				</property>
+				<property>
+				    <name>dfs.namenode.name.dir</name>
+				    <value>file:<hadoop Home>/yarn_data/hdfs/namenode</value>
+				</property>
+				<property>
+				    <name>dfs.datanode.data.dir</name>
+				    <value>file:<hadoop Home>/yarn_data/hdfs/datanode</value>
+				</property>
+				
+			Note:- In this case <Hadoop Home> will be "/home/hduser/hadoop" 
 	
 	
 	
