@@ -45,27 +45,27 @@ Pre requisit for Hadoop installation
 		ssh-keygen -t rsa -P ""
 		cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 	
-	Verify SSH configuration:-  
+		Verify SSH configuration:-  
 		
 		ssh localhost or ssh hduser@localhost
 	
 	6- Disable IPV6 :- 
 	
-	Ppen the file sysctl.conf
+		Open the file sysctl.conf
 	
 		vi /etc/sysctl.conf
 	
-	Add the following lines below of the file
+		Add the following lines below of the file
 	
 		net.ipv6.conf.all.disable_ipv6 = 1
 		net.ipv6.conf.default.disable_ipv6 = 1
 		net.ipv6.conf.lo.disable_ipv6 = 1
 		
-	Verify IPV6 configuration:-  
+		Verify IPV6 configuration:-  
 	
 		cat /proc/sys/net/ipv6/conf/all/disable_ipv6
 	
-	
+Installing Hadoop
 	
 	
 	
