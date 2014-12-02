@@ -11,3 +11,6 @@ Pre requisit for Hadoop installation
     	sudo addgroup hadoop
     	sudo adduser —ingroup hadoop hduser
 
+	2- Install Python
+	
+		sudo apt-get install python-software-properties
