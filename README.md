@@ -1,7 +1,7 @@
 Install-Hadoop-2.2
 ==================
 
-Steps to install Hadoop 2.2 on Ubuntu 12.04
+Steps by Step Guide to install Hadoop 2.2 on Ubuntu 12.04
 
 Pre requisit for Hadoop installation
 
@@ -86,7 +86,32 @@ Install Hadoop
 		
 Configure Hadoop	
 
-	
+	1- Update .bashrc file
+		open .bashrc of the hduser in vi editor
+		
+			vi $HOME/.bashrc
+		
+		Add following lines at below of the file
+			
+			# Set Hadoop-related environment variables
+			export HADOOP_PREFIX=<hadoop installation directory>
+			export HADOOP_HOME=<hadoop installation directory>
+			export HADOOP_MAPRED_HOME=${HADOOP_HOME}
+			export HADOOP_COMMON_HOME=${HADOOP_HOME}
+			export HADOOP_HDFS_HOME=${HADOOP_HOME}
+			export YARN_HOME=${HADOOP_HOME}
+			export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
+			# Native Path
+			export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_PREFIX}/lib/native
+			export HADOOP_OPTS="-Djava.library.path=$HADOOP_PREFIX/lib"
+			#Java path
+			export JAVA_HOME='<Java Home>'
+			# Add Hadoop bin/ directory to PATH
+			export PATH=$PATH:$HADOOP_HOME/bin:$JAVA_PATH/bin:$HADOOP_HOME/sbin
+			
+		Note :- Provide the value of HADOOP_PREFIX, HADOOP_HOME and JAVA_HOME.
+			In this case HADOOP_PREFIX and HADOOP_HOME value will be "/home/hduser/hadoop"
+			and the value of JAVA_HOME will be "/usr/lib/jvm/java-7-oracle" 
 	
 	
 	
