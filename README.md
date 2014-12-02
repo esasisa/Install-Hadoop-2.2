@@ -13,7 +13,7 @@ Pre requisit for Hadoop installation
 
 	2- Install Python :- 
 	
-	sudo apt-get install python-software-properties
+		sudo apt-get install python-software-properties
 	
 	Note:- If you are running behind proxy, set the proxy before installation.
 	
