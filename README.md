@@ -23,7 +23,14 @@ Pre requisit for Hadoop installation
 	
 	3- Install Java :- 
 	
-	3.1 Add repository :- (If you are rnning behind proxy use E option, other wise remove this option)
+		3.1 Add repository :- (If you are rnning behind proxy use E option, other wise remove this option)
 		
-		sudo -E add-apt-repository ppa:webupd8team/java
+			sudo -E add-apt-repository ppa:webupd8team/java
 		
+		3.2 Update repository :- 
+	
+			sudo apt-get update
+			
+		3.3 Install Oracle Java 7
+		
+			sudo apt-get install oracle-java7-installer
