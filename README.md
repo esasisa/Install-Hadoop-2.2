@@ -34,3 +34,17 @@ Pre requisit for Hadoop installation
 		3.3 Install Oracle Java 7
 		
 			sudo apt-get install oracle-java7-installer
+			
+	4- Install SSH Server :-
+	
+		sudo apt-get install openssh-server openssh-client
+		
+	5- Configure SSH :- 
+	
+		su - hduser
+		ssh-keygen -t rsa -P ""
+		cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+	
+	For verification of ssh configuration, run following command - 
+		
+		ssh localhost or ssh hduser@localhost
