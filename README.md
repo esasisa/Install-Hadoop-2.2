@@ -65,12 +65,27 @@ Pre requisit for Hadoop installation
 	
 		cat /proc/sys/net/ipv6/conf/all/disable_ipv6
 	
-Installing Hadoop
+Install Hadoop
 
 	1 - Download Haddop Tar :- Download this file in hduser home.
-	cd /home/hduser
-	wget http://apache.mirrors.pair.com/hadoop/common/stable2/hadoop-2.2..tar.gz
 	
+		cd /home/hduser
+		wget http://apache.mirrors.pair.com/hadoop/common/stable2/hadoop-2.2..tar.gz
+		
+	2- Extract tar file :-
+		
+		tar –xvzf hadoop-2.2.0.tar.gz
+		
+	3- Move files into hadoop :- 
+	
+		mv hadoop-2.2.0 hadoop
+		
+	4- Change the files permission :- 
+		
+		sudo chown -R hduser:hadoop Hadoop
+		
+Configure Hadoop	
+
 	
 	
 	
