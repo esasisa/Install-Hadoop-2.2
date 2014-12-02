@@ -195,9 +195,46 @@ Configure Hadoop
 		hadoop namenode -format       (hadoop command is depricated in 2.2 version) or
 		hdfs namenode -format
 	
-Start and Stop Hadoop
-
+Start Hadoop
+	Move to the sbin folder
+		cd <Hoadoop Installation Dir>/sbin
+		
+		In this case <Hoadoop Installation Dir> value will be "/home/hduser/hadoop"
+	
 	1- Start Name node:- 
+		
+		hadoop-daemon.sh start namenode or ./hadoop-daemon.sh start namenode
+	
+	2- Start Data node :- 
+	
+		hadoop-daemon.sh start datanode or ./hadoop-daemon.sh start datanode
+		
+	3- Start Resource Manager :- 
+	
+		yarn-daemon.sh start resourcemanager or ./yarn-daemon.sh start resourcemanager
+		
+	4- Start Node Manager :- 
+	
+		yarn-daemon.sh start nodemanager  or  ./yarn-daemon.sh start nodemanager
+	
+	For verification of running hadoop process, run the following command - 
+		jps
+		
+		Result should be like -
+		
+			2566 ResourceManager
+			2283 NameNode
+			2901 Jps
+			2398 DataNode
+			2801 NodeManager
 	
 	
-	
+Stop Hadoop :- 
+
+	stop-dfs.sh    or   ./stop-dfs.sh
+	stop-yarn.sh   or   ./stop-yarn.sh
+
+Web Interfaces :- To check the health of the HDFS
+
+	http://localhost:50070/dfshealth.jsp
+
